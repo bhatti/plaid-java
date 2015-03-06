@@ -1,16 +1,20 @@
 package com.plaid.client.request;
 
 public class Credentials {
-    
+
     private String username;
     private String password;
     private String pin;
+
+    public Credentials() {
+
+    }
 
     public Credentials(String username, String password) {
         // the json serializer will not include the pin when it is null
         this(username, password, null);
     }
-    
+
     public Credentials(String username, String password, String pin) {
         this.username = username;
         this.password = password;
@@ -20,20 +24,31 @@ public class Credentials {
     public String getUsername() {
         return username;
     }
+
     public void setUsername(String username) {
         this.username = username;
     }
+
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
+
     public String getPin() {
         return pin;
     }
+
     public void setPin(String pin) {
         this.pin = pin;
+    }
+
+    @Override
+    public String toString() {
+        return "Credentials [username=" + username + ", password=" + password
+                + ", pin=" + pin + "]";
     }
 
 }
